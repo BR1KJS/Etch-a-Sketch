@@ -13,23 +13,23 @@ function createGrid (x){
     grid.style.width = pixels + 'px';
     grid.style.backgroundColor = 'white';
     document.getElementById("gridBox").appendChild(grid);
-
-            
         }
     
+    }
 }
 
-
-
-}
 const gridBox = document.getElementById('gridBox')
+
 gridBox.addEventListener('mouseover', createGrid(16))
-gridBox.addEventListener('mouseover', checkGrid)
-function checkGrid (x) {
+gridBox.addEventListener('mouseover', gridHover)
 
+function gridHover (x) {
 x.target.style.backgroundColor = 'black';
-
-
 }
 
+document.getElementById('reset').addEventListener('click', resetGrid)
 
+function resetGrid (x) {
+gridBox. innerHTML = '';
+createGrid(16);
+}
