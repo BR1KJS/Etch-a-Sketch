@@ -5,14 +5,18 @@ body
 
 }
 
-#gridBox
-
+#main
 {
-    background-color: grey;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    
+}
+#gridBox
+
+{
+    background-color: grey;
     width: 512px;
     height: 512px;
     display: flex;
