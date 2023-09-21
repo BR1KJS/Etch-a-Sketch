@@ -1,6 +1,8 @@
 
+const gridBox = document.getElementById('gridBox')
+let defaultSize = 4
+var x = defaultSize
 function createGrid (x){
-
 
 
 
@@ -17,10 +19,7 @@ function createGrid (x){
     
     }
 }
-
-const gridBox = document.getElementById('gridBox')
-
-gridBox.addEventListener('mouseover', createGrid(16))
+gridBox.addEventListener('mouseover', createGrid(x))
 gridBox.addEventListener('mouseover', gridHover)
 
 function gridHover (x) {
@@ -29,7 +28,32 @@ x.target.style.backgroundColor = 'black';
 
 document.getElementById('reset').addEventListener('click', resetGrid)
 
-function resetGrid (x) {
-gridBox. innerHTML = '';
-createGrid(16);
+function resetGrid () {
+gridBox.innerHTML = '';
+createGrid(x);
+}
+gridSize = gridBox.childElementCount
+document.getElementById('gridSize').innerHTML = gridSize + ' px'
+
+plus = document.getElementById('plus')
+plus.addEventListener('click', gridExpand)
+
+function gridExpand(){
+    if (x >= 32 ) {return 0;}
+currentSize = x
+x = currentSize*2
+ console.log(x)
+resetGrid();
+}
+
+minus = document.getElementById('minus')
+minus.addEventListener('click', gridShrink)
+
+
+function gridShrink(){
+    if (x <=2 ) {return 0;}
+currentSize = x
+x = currentSize/2
+ console.log(x)
+resetGrid();
 }
