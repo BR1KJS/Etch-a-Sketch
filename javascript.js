@@ -28,7 +28,7 @@ gridBox.addEventListener('mouseover', checkGrid)
 function checkGrid (x) {
 
 x.target.style.backgroundColor = 'black';
-console.log('penis')
+
 
 }
 
