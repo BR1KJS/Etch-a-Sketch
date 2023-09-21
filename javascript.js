@@ -8,7 +8,7 @@ function createGrid (x){
         for (let rows = 0; rows < x; rows++) {
             const grid = document.createElement("div");
     grid.id = 'grid'
-    let pixels = 400/x;
+    let pixels = document.getElementById('gridBox').offsetHeight/x;
     grid.style.height = pixels + "px";
     grid.style.width = pixels + 'px';
     grid.style.backgroundColor = 'white';
@@ -23,7 +23,7 @@ function createGrid (x){
 
 }
 const gridBox = document.getElementById('gridBox')
-gridBox.addEventListener('mouseover', createGrid(8))
+gridBox.addEventListener('mouseover', createGrid(16))
 gridBox.addEventListener('mouseover', checkGrid)
 function checkGrid (x) {
 
