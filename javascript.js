@@ -35,7 +35,7 @@ x = currentSize/2
 resetGrid();
 return}
 function gridExpand(){
-    if (x >= 64 ) {return 0;}
+    if (x >= 128 ) {return 0;}
 currentSize = x
 x = currentSize*2
 resetGrid();
