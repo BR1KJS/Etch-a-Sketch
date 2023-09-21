@@ -3,7 +3,7 @@ const gridBox = document.getElementById('gridBox')
 let defaultSize = 4
 var x = defaultSize
 function createGrid (x){
-
+    gridUpdate ()
 
 
     for (let columns = 0; columns < x; columns++) {
@@ -32,9 +32,8 @@ function resetGrid () {
 gridBox.innerHTML = '';
 createGrid(x);
 }
-gridSize = gridBox.childElementCount
-document.getElementById('gridSize').innerHTML = gridSize + ' px'
-
+function gridUpdate () {document.getElementById('gridSize').innerHTML = (x + 'x' + x)
+}
 plus = document.getElementById('plus')
 plus.addEventListener('click', gridExpand)
 
@@ -42,7 +41,6 @@ function gridExpand(){
     if (x >= 32 ) {return 0;}
 currentSize = x
 x = currentSize*2
- console.log(x)
 resetGrid();
 }
 
@@ -54,6 +52,5 @@ function gridShrink(){
     if (x <=2 ) {return 0;}
 currentSize = x
 x = currentSize/2
- console.log(x)
 resetGrid();
 }
