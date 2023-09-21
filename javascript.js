@@ -1,19 +1,34 @@
-let gridSize = 16
-for (let size = 0; size < gridSize; size++) {
-    const grid = document.createElement("div");
+
+function createGrid (x){
+
+
+
+
+    for (let columns = 0; columns < x; columns++) {
+        for (let rows = 0; rows < x; rows++) {
+            const grid = document.createElement("div");
     grid.id = 'grid'
-    grid.style.height = "100px";
-    grid.style.width = "100px";
+    let pixels = 400/x;
+    grid.style.height = pixels + "px";
+    grid.style.width = pixels + 'px';
     grid.style.backgroundColor = 'white';
     document.getElementById("gridBox").appendChild(grid);
+
+            
+        }
+    
 }
 
-const gridBox = document.getElementById('gridBox')
-gridBox.addEventListener('mouseover', checkGrid)
 
+
+}
+const gridBox = document.getElementById('gridBox')
+gridBox.addEventListener('mouseover', createGrid(8))
+gridBox.addEventListener('mouseover', checkGrid)
 function checkGrid (x) {
 
 x.target.style.backgroundColor = 'black';
+console.log('penis')
 
 }
 
