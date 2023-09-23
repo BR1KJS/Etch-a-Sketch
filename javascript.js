@@ -20,8 +20,14 @@ function createGrid (x){
     }
 return}
 function gridHover (x) {
-x.target.style.backgroundColor = 'black';
-return}
+    let randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+if(modeButton.innerHTML == 'NORMAL'){
+x.target.style.backgroundColor = 'black';}
+else if (modeButton.innerHTML == "RAINBOW")
+x.target.style.backgroundColor = randomColor
+else if (modeButton.innerHTML == 'DARKENING') 
+x.target.filter = 'brightness(50%)';
+}
 function resetGrid () {
 gridBox.innerHTML = '';
 createGrid(x);
@@ -56,4 +62,18 @@ plus.addEventListener('click', gridExpand)
 minus = document.getElementById('minus')
 minus.addEventListener('click', gridShrink)
 
+var modeButton = document.getElementById('modeButton')
 
+modeButton.addEventListener('click', switchMode)
+
+function switchMode () {if(modeButton.innerHTML == 'NORMAL')
+{modeButton.innerHTML = 'RAINBOW'
+modeButton.classList.add('rainbowButton')}
+else if (modeButton.innerHTML == 'RAINBOW') {modeButton.classList.remove('rainbowButton'); modeButton.innerHTML = "DARKENING" }
+else modeButton.innerHTML = 'NORMAL'
+
+}
+
+
+function generateColor (x) {
+}
